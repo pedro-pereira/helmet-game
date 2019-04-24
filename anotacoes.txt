@@ -1,0 +1,15 @@
+
+alarm[0]	porta
+
+alarm[1]	martelo (interno)
+alarm[2]	balde (interno)
+alarm[3]	alicate (interno)
+alarm[4]	fenda (interno)
+alarm[5]	grife (interno)
+
+
+alarm[6]	martelo (externo)
+alarm[7]	balde (externo)
+alarm[8]	alicate (externo)
+alarm[9]	fenda (externo)
+alarm[10]	grife (externo)

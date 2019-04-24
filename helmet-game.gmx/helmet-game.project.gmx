@@ -12,13 +12,20 @@
       <sprite>sprites\spr_martelo_2</sprite>
       <sprite>sprites\spr_martelo_3</sprite>
     </sprites>
+    <sprites name="balde">
+      <sprite>sprites\spr_balde_1</sprite>
+      <sprite>sprites\spr_balde_2</sprite>
+      <sprite>sprites\spr_balde_3</sprite>
+      <sprite>sprites\spr_balde_4</sprite>
+      <sprite>sprites\spr_balde_5</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_personagem</object>
-    <object>objects\obj_martelo</object>
     <object>objects\obj_temporizador</object>
+    <object>objects\obj_balde</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

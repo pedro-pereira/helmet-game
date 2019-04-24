@@ -25,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[7] = room_speed * 2;
+            <string>alarm[2] = room_speed;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="7">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,8 +48,49 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[7] = room_speed * 2;
-instance_create(60, 100, obj_balde);
+            <string>if(y == 100)
+ sprite_index = spr_balde_1;
+
+if(y == 140)
+ sprite_index = spr_balde_2;
+
+if(y == 180)
+ sprite_index = spr_balde_3;
+ 
+if(y == 220)
+ sprite_index = spr_balde_4;
+ 
+if(y == 260)
+ sprite_index = spr_balde_5;
+ 
+y = y + 40;
+
+alarm[2] = room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(y &gt; obj_personagem.y) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
