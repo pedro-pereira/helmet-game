@@ -25,14 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>posicao = 1;
-alarm[6] = room_speed;
+            <string>alarm[1] = room_speed;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="6">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,21 +48,31 @@ alarm[6] = room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y = y + 40;
-posicao = posicao + 1;
+            <string>if(y == 90)
+    sprite_index = spr_martelo_1;
 
-show_message(string(posicao));
+if(y == 150)
+    sprite_index = spr_martelo_2;
 
-if(posicao == 1)
- sprite_index = spr_martelo_1;
+if(y == 210)
+    sprite_index = spr_martelo_3;
+ 
+if(y == 270)
+    sprite_index = spr_martelo_4;
+ 
+if(y == 330) 
+    sprite_index = spr_martelo_5;
+    
+if(y == 390) {
+    sprite_index = -1;
+}
+    
+if(y == 460) 
+    instance_destroy();
 
-if(posicao == 2)
- sprite_index = spr_martelo_2;
+y = y + 60;
 
-if(posicao == 3)
- sprite_index = spr_martelo_3;
-
-alarm[6] = room_speed;
+alarm[1] = room_speed;
 </string>
           </argument>
         </arguments>
@@ -86,9 +95,9 @@ alarm[6] = room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(y &gt; obj_personagem.y) {
+            <string>if(y &gt; 390 &amp;&amp; obj_personagem.x == 173) {
     instance_destroy();
-    posicao = 1;
+    show_message('Morreu!');
 }
 </string>
           </argument>

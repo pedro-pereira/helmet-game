@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>35</xorig>
-  <yorigin>55</yorigin>
+  <yorigin>0</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
-  <bbox_right>66</bbox_right>
+  <bbox_left>0</bbox_left>
+  <bbox_right>70</bbox_right>
   <bbox_top>12</bbox_top>
-  <bbox_bottom>55</bbox_bottom>
+  <bbox_bottom>104</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,8 +18,8 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>71</width>
-  <height>71</height>
+  <height>105</height>
   <frames>
-    <frame index="0">images\spr_martelo_1_0.png</frame>
+    <frame index="0">images\spr_personagem_3_0.png</frame>
   </frames>
 </sprite>

@@ -48,8 +48,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[7] = room_speed * 2;
-instance_create(60, 100, obj_balde);
+            <string>alarm[7] = room_speed * 5;
+
+instance_create(150, 90, obj_martelo);
 </string>
           </argument>
         </arguments>
