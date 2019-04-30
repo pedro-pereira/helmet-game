@@ -25,7 +25,88 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[7] = room_speed * 2;
+            <string>pontuacao = 0;
+
+alarm[6] = room_speed * 2;
+alarm[7] = room_speed * 2;
+alarm[8] = room_speed * 2;
+alarm[9] = room_speed * 2;
+alarm[10] = room_speed * 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[10] = room_speed * 5;
+
+instance_create(470, 90, obj_grife);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[9] = room_speed * 5;
+
+instance_create(390, 90, obj_fenda);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[8] = room_speed * 5;
+
+instance_create(310, 90, obj_alicate);
 </string>
           </argument>
         </arguments>
@@ -50,7 +131,183 @@
             <kind>1</kind>
             <string>alarm[7] = room_speed * 5;
 
+instance_create(230, 90, obj_balde);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[6] = room_speed * 5;
+
 instance_create(150, 90, obj_martelo);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>centena = obj_temporizador.pontuacao div 100;
+dezena  = (obj_temporizador.pontuacao mod 100) div 10;
+unidade = (obj_temporizador.pontuacao mod 100) mod 10;
+
+switch(centena) {
+    case 0:
+        obj_centena.sprite_index = spr_zero;
+        break;
+        
+    case 1:
+        obj_centena.sprite_index = spr_um;
+        break;
+
+    case 2:
+        obj_centena.sprite_index = spr_dois;
+        break;
+        
+    case 3:
+        obj_centena.sprite_index = spr_tres;
+        break;
+        
+    case 4:
+        obj_centena.sprite_index = spr_quatro;
+        break;
+        
+    case 5:
+        obj_centena.sprite_index = spr_cinco;
+        break;
+        
+    case 6:
+        obj_centena.sprite_index = spr_seis;
+        break;
+        
+    case 7:
+        obj_centena.sprite_index = spr_sete;
+        break;
+        
+    case 8:
+        obj_centena.sprite_index = spr_oito;
+        break;
+        
+    case 9:
+        obj_centena.sprite_index = spr_nove;
+        break;        
+}
+
+switch(dezena) {
+    case 0:
+        obj_dezena.sprite_index = spr_zero;
+        break;
+        
+    case 1:
+        obj_dezena.sprite_index = spr_um;
+        break;
+
+    case 2:
+        obj_dezena.sprite_index = spr_dois;
+        break;
+        
+    case 3:
+        obj_dezena.sprite_index = spr_tres;
+        break;
+        
+    case 4:
+        obj_dezena.sprite_index = spr_quatro;
+        break;
+        
+    case 5:
+        obj_dezena.sprite_index = spr_cinco;
+        break;
+        
+    case 6:
+        obj_dezena.sprite_index = spr_seis;
+        break;
+        
+    case 7:
+        obj_dezena.sprite_index = spr_sete;
+        break;
+        
+    case 8:
+        obj_dezena.sprite_index = spr_oito;
+        break;
+        
+    case 9:
+        obj_dezena.sprite_index = spr_nove;
+        break; 
+}
+
+switch(unidade) {
+    case 0:
+        obj_unidade.sprite_index = spr_zero;
+        break;
+        
+    case 1:
+        obj_unidade.sprite_index = spr_um;
+        break;
+
+    case 2:
+        obj_unidade.sprite_index = spr_dois;
+        break;
+        
+    case 3:
+        obj_unidade.sprite_index = spr_tres;
+        break;
+        
+    case 4:
+        obj_unidade.sprite_index = spr_quatro;
+        break;
+        
+    case 5:
+        obj_unidade.sprite_index = spr_cinco;
+        break;
+        
+    case 6:
+        obj_unidade.sprite_index = spr_seis;
+        break;
+        
+    case 7:
+        obj_unidade.sprite_index = spr_sete;
+        break;
+        
+    case 8:
+        obj_unidade.sprite_index = spr_oito;
+        break;
+        
+    case 9:
+        obj_unidade.sprite_index = spr_nove;
+        break;        
+}
 </string>
           </argument>
         </arguments>

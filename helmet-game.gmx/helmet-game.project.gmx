@@ -27,10 +27,49 @@
       <sprite>sprites\spr_personagem_4</sprite>
       <sprite>sprites\spr_personagem_5</sprite>
       <sprite>sprites\spr_personagem_6</sprite>
+      <sprite>sprites\spr_personagem_7</sprite>
+      <sprite>sprites\spr_personagem_morto</sprite>
     </sprites>
     <sprites name="porta">
       <sprite>sprites\spr_porta_aberta</sprite>
       <sprite>sprites\spr_porta_fechada</sprite>
+    </sprites>
+    <sprites name="alicate">
+      <sprite>sprites\spr_alicate_1</sprite>
+      <sprite>sprites\spr_alicate_2</sprite>
+      <sprite>sprites\spr_alicate_3</sprite>
+      <sprite>sprites\spr_alicate_4</sprite>
+      <sprite>sprites\spr_alicate_5</sprite>
+    </sprites>
+    <sprites name="fenda">
+      <sprite>sprites\spr_fenda_1</sprite>
+      <sprite>sprites\spr_fenda_2</sprite>
+      <sprite>sprites\spr_fenda_3</sprite>
+      <sprite>sprites\spr_fenda_4</sprite>
+      <sprite>sprites\spr_fenda_5</sprite>
+    </sprites>
+    <sprites name="grife">
+      <sprite>sprites\spr_grife_1</sprite>
+      <sprite>sprites\spr_grife_2</sprite>
+      <sprite>sprites\spr_grife_3</sprite>
+      <sprite>sprites\spr_grife_4</sprite>
+      <sprite>sprites\spr_grife_5</sprite>
+    </sprites>
+    <sprites name="placar">
+      <sprite>sprites\spr_zero</sprite>
+      <sprite>sprites\spr_um</sprite>
+      <sprite>sprites\spr_dois</sprite>
+      <sprite>sprites\spr_tres</sprite>
+      <sprite>sprites\spr_quatro</sprite>
+      <sprite>sprites\spr_cinco</sprite>
+      <sprite>sprites\spr_seis</sprite>
+      <sprite>sprites\spr_sete</sprite>
+      <sprite>sprites\spr_oito</sprite>
+      <sprite>sprites\spr_nove</sprite>
+    </sprites>
+    <sprites name="outros">
+      <sprite>sprites\spr_vida</sprite>
+      <sprite>sprites\spr_miss</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -43,6 +82,14 @@
     <object>objects\obj_balde</object>
     <object>objects\obj_martelo</object>
     <object>objects\obj_porta</object>
+    <object>objects\obj_alicate</object>
+    <object>objects\obj_fenda</object>
+    <object>objects\obj_grife</object>
+    <object>objects\obj_unidade</object>
+    <object>objects\obj_dezena</object>
+    <object>objects\obj_centena</object>
+    <object>objects\obj_vida</object>
+    <object>objects\obj_miss</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

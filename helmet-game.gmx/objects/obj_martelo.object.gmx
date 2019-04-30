@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>alarm[1] = room_speed;
+
+death_time = 0;
 </string>
           </argument>
         </arguments>
@@ -60,15 +62,14 @@ if(y == 210)
 if(y == 270)
     sprite_index = spr_martelo_4;
  
-if(y == 330) 
+if(y == 330) {
     sprite_index = spr_martelo_5;
-    
+}
+
 if(y == 390) {
+    obj_temporizador.pontuacao = obj_temporizador.pontuacao + 1;
     sprite_index = -1;
 }
-    
-if(y == 460) 
-    instance_destroy();
 
 y = y + 60;
 
@@ -95,9 +96,20 @@ alarm[1] = room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(y &gt; 390 &amp;&amp; obj_personagem.x == 173) {
-    instance_destroy();
-    show_message('Morreu!');
+            <string>if(y == 390 &amp;&amp; obj_personagem.x == 173) {
+    
+    death_time += delta_time;
+    
+    if (death_time &gt;= 2 * 100000) {
+        instance_destroy();
+        obj_personagem.posicao = 8;
+        show_message('Morreu!');
+        obj_personagem.morte = obj_personagem.morte + 1;
+        
+        posicaoX = 400 + (obj_personagem.morte * 33);
+        instance_create(posicaoX, 50, obj_vida);
+    
+   }
 }
 </string>
           </argument>

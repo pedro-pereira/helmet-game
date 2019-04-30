@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -30,6 +30,10 @@ x = 97;
 y = 422;
 
 posicao = 1;
+
+death_time = 0;
+
+morte = 0;
 </string>
           </argument>
         </arguments>
@@ -59,7 +63,13 @@ esquerda  = keyboard_check (vk_left);
 esquerdaR = keyboard_check_released (vk_left);
 
 if (direitaR &amp;&amp; posicao &lt; 7) {
-    posicao = posicao + 1;
+    if(posicao == 6)
+        if(obj_porta.situacao)
+            posicao = posicao + 1;
+        else
+            posicao = posicao;
+    else
+        posicao = posicao + 1;
 } else if (esquerdaR &amp;&amp; posicao &gt; 1) {
     posicao = posicao - 1;
 }
@@ -98,6 +108,38 @@ if(posicao == 6) {
     x = 475;
     y = 427;
     sprite_index = spr_personagem_6;
+}
+
+if(posicao == 7) {
+    x = 580;
+    y = 427;
+    sprite_index = spr_personagem_7;
+    
+    obj_temporizador.pontuacao = obj_temporizador.pontuacao + 5;
+    
+    posicao = 1;
+}
+
+if(posicao == 8) {
+    x = 330;
+    y = 560;
+    sprite_index = spr_personagem_morto;
+    
+    death_time += delta_time;
+    
+    if (death_time &gt;= 2 * 1000000) {
+        sprite_index = -1;
+        posicao = 1;
+        death_time = 0;
+    }
+}
+
+if(morte == 1) {
+    instance_create(426, 90, obj_miss);
+}
+
+if(morte == 3) {
+    game_restart();
 }
 </string>
           </argument>

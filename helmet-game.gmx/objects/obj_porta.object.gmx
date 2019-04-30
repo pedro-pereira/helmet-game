@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>// Posição inicial
-x = 570;
-y = 452;
+x = 530;
+y = 474;
 
 situacao = false;
 sprite_index = spr_porta_fechada;
@@ -59,12 +59,12 @@ alarm[0] = room_speed;
 alarm[0] = room_speed;
 
 if(situacao) {
-    x = 595;
-    y = 452;
+    x = 530;
+    y = 455;
     sprite_index = spr_porta_aberta;
 } else {
-    x = 570;
-    y = 452;
+    x = 530;
+    y = 474;
     sprite_index = spr_porta_fechada;
 }
 </string>
