@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\som_objeto_caindo</sound>
+    <sound>sound\som_personagem_porta</sound>
+    <sound>sound\som_personagem_morrendo</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="martelo">
       <sprite>sprites\spr_martelo_1</sprite>

@@ -25,13 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>pontuacao = 0;
+            <string>/// Alarme EXTERNOS: controla a CRIACAO dos objetos. Pause.
 
-alarm[6] = room_speed * 2;
-alarm[7] = room_speed * 2;
-alarm[8] = room_speed * 2;
-alarm[9] = room_speed * 2;
-alarm[10] = room_speed * 2;
+pause = false;
+
+// Pontuacao
+pontuacao = 0;
+
+// Martelo
+alarm[6]  = room_speed * 5;
+
+// Balde
+alarm[7]  = room_speed * 6;
+
+// Alicate
+alarm[8]  = room_speed * 5.5;
+
+// Fenda
+alarm[9]  = room_speed * 7;
+
+// Grife
+alarm[10] = room_speed * 6.5;
 </string>
           </argument>
         </arguments>
@@ -54,9 +68,10 @@ alarm[10] = room_speed * 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[10] = room_speed * 5;
+            <string>/// Grife - Externo (x4.5)
 
-instance_create(470, 90, obj_grife);
+alarm[10] = room_speed * 6.5;
+instance_create(470, 96, obj_grife);
 </string>
           </argument>
         </arguments>
@@ -79,9 +94,10 @@ instance_create(470, 90, obj_grife);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[9] = room_speed * 5;
+            <string>/// Fenda - Externo (x5)
 
-instance_create(390, 90, obj_fenda);
+alarm[9] = room_speed * 7;
+instance_create(390, 96, obj_fenda);
 </string>
           </argument>
         </arguments>
@@ -104,9 +120,10 @@ instance_create(390, 90, obj_fenda);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[8] = room_speed * 5;
+            <string>/// Alicate - Externo (x3.5)
 
-instance_create(310, 90, obj_alicate);
+alarm[8] = room_speed * 5.5;
+instance_create(310, 96, obj_alicate);
 </string>
           </argument>
         </arguments>
@@ -129,9 +146,10 @@ instance_create(310, 90, obj_alicate);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[7] = room_speed * 5;
+            <string>/// Balde - Externo (x4)
 
-instance_create(230, 90, obj_balde);
+alarm[7] = room_speed * 6;
+instance_create(230, 96, obj_balde);
 </string>
           </argument>
         </arguments>
@@ -154,9 +172,10 @@ instance_create(230, 90, obj_balde);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[6] = room_speed * 5;
+            <string>/// Martelo - Externo (x3)
 
-instance_create(150, 90, obj_martelo);
+alarm[6] = room_speed * 5;
+instance_create(150, 96, obj_martelo);
 </string>
           </argument>
         </arguments>
@@ -179,134 +198,121 @@ instance_create(150, 90, obj_martelo);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>centena = obj_temporizador.pontuacao div 100;
+            <string>/// Display de pontos
+
+// Cálculo de cada dígito do display
+centena =  obj_temporizador.pontuacao div 100;
 dezena  = (obj_temporizador.pontuacao mod 100) div 10;
 unidade = (obj_temporizador.pontuacao mod 100) mod 10;
 
+// Centena - Dígito
 switch(centena) {
     case 0:
         obj_centena.sprite_index = spr_zero;
         break;
-        
     case 1:
         obj_centena.sprite_index = spr_um;
         break;
-
     case 2:
         obj_centena.sprite_index = spr_dois;
         break;
-        
     case 3:
         obj_centena.sprite_index = spr_tres;
         break;
-        
     case 4:
         obj_centena.sprite_index = spr_quatro;
         break;
-        
     case 5:
         obj_centena.sprite_index = spr_cinco;
         break;
-        
     case 6:
         obj_centena.sprite_index = spr_seis;
         break;
-        
     case 7:
         obj_centena.sprite_index = spr_sete;
         break;
-        
     case 8:
         obj_centena.sprite_index = spr_oito;
         break;
-        
     case 9:
         obj_centena.sprite_index = spr_nove;
         break;        
 }
 
+// Dezena - Dígito
 switch(dezena) {
     case 0:
         obj_dezena.sprite_index = spr_zero;
         break;
-        
     case 1:
         obj_dezena.sprite_index = spr_um;
         break;
-
     case 2:
         obj_dezena.sprite_index = spr_dois;
         break;
-        
     case 3:
         obj_dezena.sprite_index = spr_tres;
         break;
-        
     case 4:
         obj_dezena.sprite_index = spr_quatro;
         break;
-        
     case 5:
         obj_dezena.sprite_index = spr_cinco;
         break;
-        
     case 6:
         obj_dezena.sprite_index = spr_seis;
         break;
-        
     case 7:
         obj_dezena.sprite_index = spr_sete;
         break;
-        
     case 8:
         obj_dezena.sprite_index = spr_oito;
         break;
-        
     case 9:
         obj_dezena.sprite_index = spr_nove;
         break; 
 }
 
+// Unidade - Dígito
 switch(unidade) {
     case 0:
         obj_unidade.sprite_index = spr_zero;
         break;
-        
     case 1:
         obj_unidade.sprite_index = spr_um;
         break;
-
     case 2:
         obj_unidade.sprite_index = spr_dois;
         break;
-        
     case 3:
         obj_unidade.sprite_index = spr_tres;
         break;
-        
     case 4:
         obj_unidade.sprite_index = spr_quatro;
         break;
-        
     case 5:
         obj_unidade.sprite_index = spr_cinco;
         break;
-        
     case 6:
         obj_unidade.sprite_index = spr_seis;
         break;
-        
     case 7:
         obj_unidade.sprite_index = spr_sete;
         break;
-        
     case 8:
         obj_unidade.sprite_index = spr_oito;
         break;
-        
     case 9:
         obj_unidade.sprite_index = spr_nove;
         break;        
+}
+
+// Resolve o display para não mostrar "zeros inúteis".
+if(centena == 0) {
+    if(dezena == 0) {
+        obj_dezena.sprite_index = -1;
+    }
+    obj_centena.sprite_index = -1;
 }
 </string>
           </argument>

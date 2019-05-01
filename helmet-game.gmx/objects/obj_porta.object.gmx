@@ -25,14 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Posição inicial
+            <string>/// Inicialização + alarme[0] INTERNO
+
+// Posição inicial
 x = 530;
-y = 474;
+y = 488;
 
+// Situacao FALSE = FECHADA; TRUE = ABERTA.
 situacao = false;
-sprite_index = spr_porta_fechada;
+alarm[0] = room_speed * 2.5;
 
-alarm[0] = room_speed;
+sprite_index = spr_porta_fechada;
 </string>
           </argument>
         </arguments>
@@ -55,16 +58,18 @@ alarm[0] = room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>situacao = !situacao;
-alarm[0] = room_speed;
+            <string>/// Lógica da porta: FALSE = FECHADA; TRUE = ABERTA.
+
+situacao = !situacao;
+alarm[0] = room_speed * 2.5;
 
 if(situacao) {
     x = 530;
-    y = 455;
+    y = 469;
     sprite_index = spr_porta_aberta;
 } else {
     x = 530;
-    y = 474;
+    y = 488;
     sprite_index = spr_porta_fechada;
 }
 </string>

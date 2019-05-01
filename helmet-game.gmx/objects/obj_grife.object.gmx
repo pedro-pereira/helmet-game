@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[5] = room_speed;
+            <string>/// Inicia o alame[5] INTERNO
+
+alarm[5] = room_speed;
+latencia = 0;
 </string>
           </argument>
         </arguments>
@@ -48,30 +51,77 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(y == 90)
+            <string>/// Máquina de estados INTERNA para os sprites
+
+if(y == 96)
     sprite_index = spr_grife_1;
 
-if(y == 150)
+if(y == 156)
     sprite_index = spr_grife_2;
 
-if(y == 210)
+if(y == 216)
     sprite_index = spr_grife_3;
  
-if(y == 270)
+if(y == 276)
     sprite_index = spr_grife_4;
  
-if(y == 330) {
+if(y == 336) {
     sprite_index = spr_grife_5;
 }
 
-if(y == 390) {
+if(y == 396) {
     obj_temporizador.pontuacao = obj_temporizador.pontuacao + 1;
     sprite_index = -1;
 }
 
 y = y + 60;
 
+audio_play_sound(som_objeto_caindo, 1, false);
+
 alarm[5] = room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão
+
+if(y == 396 &amp;&amp; obj_personagem.x == 475) {
+
+    latencia += delta_time;
+
+    if (latencia &gt;= 2 * 100000) {
+
+        instance_destroy();
+
+        // Atualiza situação do personagem
+        obj_personagem.posicao = 8;
+        obj_personagem.morte = obj_personagem.morte + 1;
+
+        audio_play_sound(som_personagem_morrendo, 1, false);
+        
+        // Cria ícone de "morte" ao lado do display de pontos.
+        posicaoX = 400 + (obj_personagem.morte * 33);
+        instance_create(posicaoX, 50, obj_vida);
+   }
+}
 </string>
           </argument>
         </arguments>

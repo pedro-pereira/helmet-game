@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 302;
+            <string>/// Dígito CENTENA do display - posição.
+
+x = 302;
 y = 50;
 </string>
           </argument>

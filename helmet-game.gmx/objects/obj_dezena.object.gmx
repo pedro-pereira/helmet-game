@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 326;
+            <string>/// Dígito DEZENA do display - posição.
+
+x = 326;
 y = 50;
 </string>
           </argument>

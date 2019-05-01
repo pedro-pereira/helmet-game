@@ -25,15 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Posição inicial
+            <string>/// Iniciando variáveis
+
+// Posição inicial
 x = 97;
-y = 422;
+y = 436;
 
-posicao = 1;
-
-death_time = 0;
-
-morte = 0;
+// Atributos
+posicao  = 1;
+latencia = 0;
+morte    = 0;
 </string>
           </argument>
         </arguments>
@@ -56,12 +57,15 @@ morte = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Entradas
+            <string>/// Teclado + posicao
+
+// Entradas
 direita   = keyboard_check (vk_right);
 direitaR  = keyboard_check_released (vk_right);      //essas sao as entradas de teclas
 esquerda  = keyboard_check (vk_left);
 esquerdaR = keyboard_check_released (vk_left);
 
+// Verifica as posições extremas do personagem: primeira (1) e última (7)
 if (direitaR &amp;&amp; posicao &lt; 7) {
     if(posicao == 6)
         if(obj_porta.situacao)
@@ -74,70 +78,77 @@ if (direitaR &amp;&amp; posicao &lt; 7) {
     posicao = posicao - 1;
 }
 
+// Máquina de estados do personagem: posicao 1 - 8.
+
 if(posicao == 1) {
     x = 97;
-    y = 422;
+    y = 436;
     sprite_index = spr_personagem_1;
 }
 
 if(posicao == 2) {
-    x = 173;
-    y = 426;
+    x = 174;
+    y = 440;
     sprite_index = spr_personagem_2;
 }
 
 if(posicao == 3) {
     x = 248;
-    y = 416;
+    y = 430;
     sprite_index = spr_personagem_3;
 }
 
 if(posicao == 4) {
     x = 323;
-    y = 417;
+    y = 431;
     sprite_index = spr_personagem_4;
 }
 
 if(posicao == 5) {
     x = 396;
-    y = 415;
+    y = 429;
     sprite_index = spr_personagem_5;
 }
 
 if(posicao == 6) {
     x = 475;
-    y = 427;
+    y = 441;
     sprite_index = spr_personagem_6;
 }
 
 if(posicao == 7) {
     x = 580;
-    y = 427;
+    y = 441;
     sprite_index = spr_personagem_7;
+    
+    audio_play_sound(som_personagem_porta, 1, false);
     
     obj_temporizador.pontuacao = obj_temporizador.pontuacao + 5;
     
     posicao = 1;
 }
 
-if(posicao == 8) {
-    x = 330;
-    y = 560;
+if(posicao == 8) {   
+    x = 335;
+    y = 565;
     sprite_index = spr_personagem_morto;
     
-    death_time += delta_time;
+    latencia += delta_time;
     
-    if (death_time &gt;= 2 * 1000000) {
+    if (latencia &gt;= 2 * 1000000) {
         sprite_index = -1;
         posicao = 1;
-        death_time = 0;
+        latencia = 0;
+        obj_temporizador.pause = false;
     }
 }
 
+// Se o personagem é atingido a primeira vez, um "ícone de morte" é criado no topo da tela.
 if(morte == 1) {
     instance_create(426, 90, obj_miss);
 }
 
+// Se o personagem é atingido três vezes, o jogo reinicia.
 if(morte == 3) {
     game_restart();
 }
