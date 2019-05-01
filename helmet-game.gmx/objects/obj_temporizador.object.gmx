@@ -27,13 +27,11 @@
             <kind>1</kind>
             <string>/// Alarme EXTERNOS: controla a CRIACAO dos objetos. Pause.
 
-pause = false;
-
 // Pontuacao
 pontuacao = 0;
 
 // Martelo
-alarm[6]  = room_speed * 5;
+alarm[6]  = room_speed * 2;
 
 // Balde
 alarm[7]  = room_speed * 6;
@@ -46,6 +44,38 @@ alarm[9]  = room_speed * 7;
 
 // Grife
 alarm[10] = room_speed * 6.5;
+
+// Pontuacao
+alarm[11] = room_speed * 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Controla PONTUACAO - (x5)
+
+if(obj_personagem.iniciou == 1) {
+    obj_temporizador.pontuacao = obj_temporizador.pontuacao + 1;
+}
+
+alarm[11] = room_speed * 5;
 </string>
           </argument>
         </arguments>
@@ -68,10 +98,10 @@ alarm[10] = room_speed * 6.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Grife - Externo (x4.5)
+            <string>/// Grife - Externo (x6.5)
 
 alarm[10] = room_speed * 6.5;
-instance_create(470, 96, obj_grife);
+instance_create(470, 156, obj_grife);
 </string>
           </argument>
         </arguments>
@@ -94,10 +124,10 @@ instance_create(470, 96, obj_grife);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Fenda - Externo (x5)
+            <string>/// Fenda - Externo (x7)
 
 alarm[9] = room_speed * 7;
-instance_create(390, 96, obj_fenda);
+instance_create(390, 156, obj_fenda);
 </string>
           </argument>
         </arguments>
@@ -120,10 +150,10 @@ instance_create(390, 96, obj_fenda);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Alicate - Externo (x3.5)
+            <string>/// Alicate - Externo (x5.5)
 
 alarm[8] = room_speed * 5.5;
-instance_create(310, 96, obj_alicate);
+instance_create(310, 156, obj_alicate);
 </string>
           </argument>
         </arguments>
@@ -146,10 +176,10 @@ instance_create(310, 96, obj_alicate);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Balde - Externo (x4)
+            <string>/// Balde - Externo (x6)
 
 alarm[7] = room_speed * 6;
-instance_create(230, 96, obj_balde);
+instance_create(230, 156, obj_balde);
 </string>
           </argument>
         </arguments>
@@ -172,10 +202,10 @@ instance_create(230, 96, obj_balde);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Martelo - Externo (x3)
+            <string>/// Martelo - Externo (x2)
 
-alarm[6] = room_speed * 5;
-instance_create(150, 96, obj_martelo);
+alarm[6] = room_speed * 2;
+instance_create(150, 156, obj_martelo);
 </string>
           </argument>
         </arguments>

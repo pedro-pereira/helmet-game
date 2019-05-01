@@ -1,0 +1,15 @@
+O jogo consiste em um personagem que precisa fazer uma travessia de uma porta a outra, sem ser atingido por ferramentas que caem do céu. 
+
+GIF
+
+os elementos do jogo:
+
+O personagem tem sua posição inicial em uma das portas, faz a travessia passando por cinco posições, e alcança, na sua sétima posição, a porta oposta, que o seu objetivo. Caso seja atingido na cabeça por uma das ferramentas que caem aleatoriamente do céu, ele "morre", podendo isso acontecer no máximo 3 vezes.
+
+Print com todo o jogo.
+
+As ferramentas são cinco: um martelo, um balde, um alicate, uma chave de fenda e uma chave fixa. Cada ferramenta se movimenta verticalmente, de cima para baixo, podendo ocupar cinco posições ao longo desse trajeto. As ferramentas são "lançadas" em momentos diferentes entre si, o que dificulta o processo de travessia do personagem.
+
+A porta de destino ele oscila entre aberta e fechada, só podendo ser atravessada pelo personagem se estiver aberta.
+
+A cada 5 segundos que o personagem não é atingido por uma ferramenta, ele ganha 1 ponto. Ao conseguir cruzar o caminho e entrar na porta oposta, ele acumula 5 pontos

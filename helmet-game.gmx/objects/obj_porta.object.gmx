@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Inicialização + alarme[0] INTERNO
+            <string>/// Inicialização + alarme[0] INTERNO (x2.5)
 
 // Posição inicial
 x = 530;
